@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+    display: grid;
+    margin: 50px;
+}
+
+.svg {
+    height: 500px;
+    margin: 30px;
+    background-color: white;
+    border: 2px black solid;
+
+}
