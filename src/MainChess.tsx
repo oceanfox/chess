@@ -25,7 +25,7 @@ export const MainChess = () => {
     }
 
     if(chess.in_check()) {
-      addToast('You have a Check!!', {
+      addToast('You have a Check', {
         appearance: 'error',
         autoDismiss: false,
       })
@@ -59,7 +59,7 @@ export const MainChess = () => {
       <h1>Random Chess</h1>
 
       <Chessboard
-        width={900}                                                K
+        width={900}
         position={fen}
         onDrop={(move: any) =>
           handleMove({
