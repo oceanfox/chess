@@ -9,12 +9,11 @@ export const MainChess = () => {
   const [fen, setFen] = useState(chess.fen());
   const {addToast} = useToasts()
 
-
   useEffect(() => {
     if (chess.game_over()) {
       addToast('Game Over', {
         appearance: 'error',
-        autoDismiss: false,
+        autoDismiss: true,
       })
     }
     if (chess.in_stalemate()) {
@@ -35,12 +34,14 @@ export const MainChess = () => {
 
   const handleMove = (move: ShortMove) => {
     if (chess.move(move)) {
+      console.log('chess',move.to);
       setTimeout(() => {
         const moves = chess.moves();
 
         if (moves.length > 0) {
           const computerMove = moves[Math.floor(Math.random() * moves.length)];
           chess.move(computerMove);
+          console.log('computer move to ',computerMove);
           setFen(chess.fen());
         }
       }, 300);
