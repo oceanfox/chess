@@ -3,12 +3,10 @@ import { useFetch } from './hooks/useFetch'
 
 
 export function News({url}) {
-    
     const [response, setResponse] = useState(null);
-    
     const {data, error, status} = useFetch(url)
+    
     useEffect(() => {
-        
         if (status === 'fetched')
             setResponse(data);
     }, [status])
